@@ -24,6 +24,11 @@ fn benchmark(diff: i32) -> duration {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    if args.len() < 2 {
+        println!("Usage: {} <parameters> <difficulty>. Use `help` as first argument for a help display", args[0]);
+        return;
+    } 
+    
     
     if args[1] == "help" {
         println!("Usage: {} <parameters> <difficulty>.", args[0]);
@@ -33,10 +38,8 @@ fn main() {
         println!("\t-ma\tmultiple repeated test (single input of average. Increased operations number!)");
         println!("Usage: {} -ma <times to repeat> <difficulty>\n", args[0]);
         println!("\thelp\tdisplay this");
-        return;
     }else if (args[1] == "-ma" || args[1] == "-m") && args.len() < 4 {
         println!("Usage: {} {} <times to repeat> <difficulty>", args[0], args[1]);
-        return;
     }else if args[1] == "-m" {
         let rep: i32 = match args[2].parse() {
             Ok(n) => n,
@@ -97,11 +100,7 @@ fn main() {
 
         let time = benchmark(diff);
         println!("The time is: {:?}", time);
-        return;
 
-    } else { 
-        println!("Usage: {} <parameters>/help <difficulty>", args[0]);
-        return;
     }
     
 }
