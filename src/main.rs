@@ -34,9 +34,9 @@ fn main() {
         println!("Usage: {} <parameters> <difficulty>.", args[0]);
         println!("Parameters:");
         println!("\t-m\tmultiple repeated test (multiple input)");
-        println!("Usage: {} -m <times to repeat> <difficulty>\n", args[0]);
+        println!("\tUsage: {} -m <times to repeat> <difficulty>\n", args[0]);
         println!("\t-ma\tmultiple repeated test (single input of average. Increased operations number!)");
-        println!("Usage: {} -ma <times to repeat> <difficulty>\n", args[0]);
+        println!("\tUsage: {} -ma <times to repeat> <difficulty>\n", args[0]);
         println!("\thelp\tdisplay this");
     }else if (args[1] == "-ma" || args[1] == "-m") && args.len() < 4 {
         println!("Usage: {} {} <times to repeat> <difficulty>", args[0], args[1]);
